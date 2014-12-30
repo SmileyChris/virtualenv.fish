@@ -8,5 +8,6 @@ function cdproject
 		echo "The virtualenv has no project set (use setvirtualenvproject)"
 		return 1
 	end
-	cd (cat $project)/$argv
+	cd (cat $project)
+	test "$argv" != ""; and cd $argv
 end
